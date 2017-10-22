@@ -1,0 +1,46 @@
+/**Emmeline Pearson - z5178618 
+   CSS formating for UNSWTalk**/
+
+.unswtalk_heading {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: "Georgia", "Veranda", serif;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: #FFFFFF;/*white*/ 
+    padding: 10px;
+    margin: 40px 40px 0px 40px;
+}
+.unswtalk_body{
+	background-color: #E0FFFF;/*blue*/ 
+	font-family: "Georgia", "Veranda", serif;
+}
+
+.unswtalk_user_details {
+    background-color: #FEDCD2; /*Peach*/
+    padding: 10px;
+    font-family: "Georgia", "Veranda", serif;
+    color: #DF744A; /**warm orange**/
+    white-space: pre-wrap; 
+    border:thin solid #FFFFF0; /*White*/ 
+    border-radius: 5 em;
+    padding-left: 0.42em;
+}
+.unswtalk_user_posts {
+    background-color: #FFFFFF; /*white*/
+    padding: 10px;
+    font-family: "Georgia", "Veranda", serif;
+    color: #DF744A; /**text: orange**/
+    white-space: pre-wrap; 
+    border:thin solid #FFFFF0; /*White*/ 
+    border-radius: 5 em;
+    padding-left: 0.42em;
+}
+.unswtalk_button {
+    background-color: #DCB239; /**Lemon**/
+    font-family: "Georgia", "Veranda", serif;
+    border:thin solid #FFFFF0; /*White*/
+    border-radius: 0.42em;
+    color: #FFFFFF; /*text: white*/
+}
