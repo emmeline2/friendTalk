@@ -1,0 +1,21 @@
+<!--Emmeline Pearson - z5178618--> 
+{% extends "base.html" %}
+
+{% block body_contents %}
+<h2>Profile</h2>
+<div class="unswtalk_user_details">
+<img src="{{url_for('static', filename=image_filename)}}">
+{{student_details}}
+
+</div>
+<h2>Posts</h3>
+<div class="unswtalk_user_posts">
+{{posts}}
+</div>
+
+<form method="POST" action="">
+    <input type="hidden" name="n" value="7" rel="stylesheet" type="text/css" href="UNSWtalk.css" >
+    <input type="submit" value="Next student" class="unswtalk_button">
+</form>
+{% endblock %}
+
