@@ -9,8 +9,9 @@
     font-size: x-large;
     font-weight: bold;
     background-color: #FFFFFF;/*white*/ 
+    border:thick solid #FFFFF0; /*White*/ 
     padding: 10px;
-    margin: 40px 40px 0px 40px;
+    margin: 40px 100px 0px 100px; /*top right bottom left*/
 }
 .unswtalk_body{
 	background-color: #E0FFFF;/*blue*/ 
@@ -23,7 +24,7 @@
     font-family: "Georgia", "Veranda", serif;
     color: #DF744A; /**warm orange**/
     white-space: pre-wrap; 
-    border:thin solid #FFFFF0; /*White*/ 
+    border:thick solid #FFFFF0; /*White*/ 
     border-radius: 5 em;
     padding-left: 0.42em;
 }
@@ -33,14 +34,34 @@
     font-family: "Georgia", "Veranda", serif;
     color: #DF744A; /**text: orange**/
     white-space: pre-wrap; 
-    border:thin solid #FFFFF0; /*White*/ 
+    border:thick solid #FFFFF0; /*White*/ 
     border-radius: 5 em;
     padding-left: 0.42em;
 }
+.unswtalk_user_friends {
+    background-color: #FEDCD2; /*blue*/
+    padding: 10px;
+    font-family: "Georgia", "Veranda", serif;
+    color: #DF744A; /**text: orange**/
+    white-space: pre-wrap; 
+    border:thick solid #FFFFF0; /*White*/ 
+    border-radius: 10 em;
+    padding-left: 0.42em;
+}
+
 .unswtalk_button {
     background-color: #DCB239; /**Lemon**/
     font-family: "Georgia", "Veranda", serif;
-    border:thin solid #FFFFF0; /*White*/
+    border:thick solid #FFFFF0; /*White*/
     border-radius: 0.42em;
     color: #FFFFFF; /*text: white*/
 }
+
+/* borrowed from https://www.w3schools.com/howto/howto_css_animated_search.asp */
+/*Search bar*/
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
