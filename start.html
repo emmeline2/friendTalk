@@ -1,4 +1,5 @@
-<!--Emmeline Pearson - z5178618--> 
+<!--Emmeline Pearson - z5178618-->
+ 
 {% extends "base.html" %}
 
 {% block body_contents %}
@@ -13,9 +14,13 @@
 {{posts}}
 </div>
 
+<h2>Friends</h3>
+<div class="unswtalk_user_friends">
+{{friends}}
+</div>
+
 <form method="POST" action="">
     <input type="hidden" name="n" value="7" rel="stylesheet" type="text/css" href="UNSWtalk.css" >
     <input type="submit" value="Next student" class="unswtalk_button">
 </form>
 {% endblock %}
-
