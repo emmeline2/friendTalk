@@ -3,6 +3,7 @@
 
 import os
 import re
+import glob
 from flask import Flask, render_template, session
 
 students_dir = "dataset-medium"; #change this value to switch datasets 
@@ -24,6 +25,7 @@ def start():
         details = f.read()
     #print(details)
     lines = details.split('\n')
+    infoToShare = ""; 
     #return render_template('start.html',student_details=lines)
     for index, line in enumerate(lines): 
         if re.match(r'^program: ',lines[index]):
@@ -38,32 +40,43 @@ def start():
             courses = line
         elif re.match(r'^password: ', lines[index]): 
             password = line
+        elif re.match(r'^friends: ', lines[index]): 
+            allFriends = line
+    f.close()
     #complete text:       
     infoToShare = name + '\n' + program + '\n' + birthday + '\n' + zid + '\n' + courses
 
     #get image
     details_imagename = os.path.join(students_dir, student_to_show, "image.jpg")
+    
 
     #get posts
-    #alltextfiles = os.path.join(students_dir,student_to_show).endswith('.txt'); 
-    max = 3;
+    fileCount = 0
+    alltextfiles = ""
+    path = students_dir + '/' +  student_to_show
+    max = 4 #prints a max of 4 posts
     allPosts = ""
-    for n in range(max,0,-1):
-        filename = str(n)
+    for xel in range(max,0,-1):   #reverse loop and print for reverse chronological order
+        filename = str(xel)
         filename +='.txt'
         details_posts = os.path.join(students_dir, student_to_show, filename)
         with open(details_posts) as file:
             post = file.read()
             allPosts = allPosts + post + '\n'
+
+
+    #friends List
+    temp = re.sub(r'^friends: ', " ", allFriends)
+    temp = re.sub(r'\('," ",temp)
+    temp = re.sub(r'\)'," ",temp)
+    friendsList = temp.split(",")
+    allFriends = " "
+    for friend in range(0,len(friendsList),1):
+        allFriends = allFriends + friendsList[friend] + "  "
             
-    session['n'] = n + 1 #infoToShare
-    return render_template('start.html',student_details=details_imagename,image_filename= details_imagename, posts=allPosts)
+    session['n'] = n + 1
+    return render_template('start.html',student_details=infoToShare,image_filename= details_imagename, posts=allPosts, friends=allFriends)
 
 if __name__ == '__main__':
     app.secret_key = os.urandom(12) #12
     app.run(debug=True)
-
-
-
-
-
